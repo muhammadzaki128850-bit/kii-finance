@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101827">
+
+    <title>Zaki Finance - Keuangan Pribadi</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2 class="brand">Zaki<span>Finance.</span></h2>
+
+            <nav>
+                <a href="#" class="active">Dashboard</a>
+                <a href="#">Transaksi</a>
+                <a href="#">Statistik</a>
+                <a href="#">Kategori</a>
+                <a href="#">Pengaturan</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>Personal Finance App</p>
+                <small>Version 1.0</small>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Selamat datang di Zaki Finance.</p>
+                </div>
+
+                <div class="user-profile">
+                    <div class="avatar">Z</div>
+                    <span>Pengguna</span>
+                </div>
+            </header>
+
+            <!-- SUMMARY CARDS -->
+            <section class="summary-grid">
+
+                <div class="summary-card">
+                    <p>Total Saldo</p>
+                    <h2 id="balance">Rp0</h2>
+                </div>
+
+                <div class="summary-card">
+                    <p>Total Pemasukan</p>
+                    <h2 id="income">Rp0</h2>
+                </div>
+
+                <div class="summary-card">
+                    <p>Total Pengeluaran</p>
+                    <h2 id="expense">Rp0</h2>
+                </div>
+
+            </section>
+
+            <!-- TRANSACTION FORM -->
+            <section class="content-card">
+                <div class="section-heading">
+                    <h2>Tambah Transaksi</h2>
+                    <p>Catat pemasukan atau pengeluaran kamu.</p>
+                </div>
+
+                <form id="transaction-form">
+
+                    <div class="form-group">
+                        <label for="type">Jenis Transaksi</label>
+                        <select id="type" required>
+                            <option value="expense">Pengeluaran</option>
+                            <option value="income">Pemasukan</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Nominal (Rp)</label>
+                        <input
+                            type="number"
+                            id="amount"
+                            placeholder="Contoh: 15000"
+                            min="1"
+                            step="1"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Kategori</label>
+                        <select id="category" required>
+                            <option value="Makanan">Makanan</option>
+                            <option value="Transportasi">Transportasi</option>
+                            <option value="Pendidikan">Pendidikan</option>
+                            <option value="Hiburan">Hiburan</option>
+                            <option value="Belanja">Belanja</option>
+                            <option value="Gaji">Gaji</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Tanggal</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="note">Keterangan</label>
+                        <input
+                            type="text"
+                            id="note"
+                            placeholder="Contoh: Makan siang"
+                        >
+                    </div>
+
+                    <button type="submit" class="submit-button">
+                        Simpan Transaksi
+                    </button>
+
+                </form>
+            </section>
+
+            <!-- TRANSACTION HISTORY -->
+            <section class="content-card">
+                <div class="section-heading">
+                    <h2>Transaksi Terbaru</h2>
+                    <p>Daftar aktivitas keuangan kamu.</p>
+                </div>
+
+                <div id="transaction-list">
+                    <p class="empty-state">
+                        Belum ada transaksi.
+                    </p>
+                </div>
+            </section>
+
+            <footer>
+                <p>© 2026 Zaki Finance. All rights reserved.</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
